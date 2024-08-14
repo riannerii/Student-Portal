@@ -2,7 +2,7 @@ import { Component, Input, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list'
 import { MatIconModule } from '@angular/material/icon'
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 export type MenuItem = {
@@ -14,7 +14,7 @@ export type MenuItem = {
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [CommonModule, MatListModule, MatIconModule, RouterModule],
+  imports: [CommonModule, MatListModule, MatIconModule, RouterModule, RouterLink],
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.css'
 })
@@ -46,16 +46,16 @@ export class SidenavComponent {
       label: 'Messages',
       route: 'messages'
     },
-    {
-      icon: 'account_circle',
-      label: 'My Account',
-      route: 'account'
-    },
-    {
-      icon: 'logout',
-      label: 'Logout',
-      route: '-'
-    }
+    // {
+    //   icon: 'account_circle',
+    //   label: 'My Account',
+    //   route: 'account'
+    // },
+    // {
+    //   icon: 'logout',
+    //   label: 'Logout',
+    //   route: 'login'
+    // }
   ])
 
   profilePicSize = computed (() => this.sideNavCollapsed() ? '32' : '100');
