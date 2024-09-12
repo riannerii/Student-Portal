@@ -1,0 +1,13 @@
+.table thead th, .table tbody td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+.table td.date-column, .table th.date-column {
+    width: 3%; /* Adjust this percentage as needed */
+}
