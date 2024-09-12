@@ -1,0 +1,77 @@
+ <!-- <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/main/classes/classespage/viewclasses">My Classes</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Science 7</li>
+    </ol>
+</nav> -->
+
+    <div class="container mt-5">
+        <!-- First Row -->
+        <div class="row card-row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                      <div class="text-section">
+                        <!-- when name of subject is clicked it will be directed to the roster of that subject -->
+                        <a class="link-primary link-offset-2 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover h4" routerLink="['/main/classes/classespage/viewsubject']">
+                            Science 7
+                        </a>
+                        <p class="h6 ms-1 m-1">Section: <small class="text-body-secondary">A</small> </p> 
+                        <p class="h6 ms-1 m-1">Room: <small class="text-body-secondary">Science Room</small> </p> 
+                        <p class="h6 ms-1 m-1">Schedule: <small class="text-body-secondary">MWF 7:00AM - 8:00AM</small> </p> 
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                      <div class="nav-section">
+                        <nav>
+                          <ul class="navbar nav"> 
+                              <li><a class="navlink" 
+                                [routerLink]="['/main/classes/classespage/viewsubject/viewroster']"
+                                routerLinkActive="active-link">
+                                <i class="fa-solid fa-list-ol me-2"></i>Roster List</a>
+                              </li>
+                              <li><a class="navlink" 
+                                [routerLink]="['/main/classes/classespage/viewsubject/checkattendance']"
+                                routerLinkActive="active-link">
+                                <i class="fa-solid fa-calendar-check me-2"></i>Attendance</a>
+                              </li>
+                              <li><a class="navlink" 
+                                [routerLink]="['/main/classes/classespage/viewsubject/viewattendanceReport']"
+                                routerLinkActive="active-link">
+                                <i class="fa-solid fa-list-check me-2"></i>Attendance Report</a>
+                              </li>
+                              <li><a class="navlink" 
+                                [routerLink]="['/main/classes/classespage/viewsubject/viewgrades']"
+                                routerLinkActive="active-link">
+                                <i class="fa-solid fa-award me-2"></i>Grades</a>
+                              </li>
+                              <li><a class="navlink" 
+                                [routerLink]="['/main/classes/classespage/viewsubject/viewstudentProg']"
+                                routerLinkActive="active-link">
+                                <i class="fa-solid fa-bars-progress me-2"></i>Student Progress</a>
+                              </li>
+                          </ul>
+                        </nav>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Second Row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                      <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
