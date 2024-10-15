@@ -1,0 +1,62 @@
+<div class="container align-self-center p-3 bg-white rounded">
+    <h2 class="text-center mb-4">Check Attendance</h2>
+    <div class="d-flex justify-content-center mb-4">
+        <div class="text-center">
+            <p class="mb-2">Month: <br> {{months[today.getMonth()]}}</p>
+        </div>
+        <div class="text-center ms-4">
+          <p class="mb-2">Select Week:</p>
+          <button (click)="today.setDate(today.getDate() -7)"> < </button>
+          <button (click)="today.setDate(today.getDate() + 7)"> > </button>
+      
+      </div>
+    </div>  
+    
+    {{today.getDate() + " - " + today.getDay()}}
+    
+   
+    <div class="container-fluid mt-4">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th rowspan="2" class="align-middle" style="width: 5%;">No.</th>
+                    <th rowspan="2" class="align-middle" style="width: 20%;">Name</th>
+                    <th colspan="22" style="text-align: center;">Day</th>
+                  </tr>
+                  
+                  <tr>
+                    <!-- <th></th>
+                    <th></th> -->
+                    <th *ngFor="let day of days">
+                      {{ day }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- @for (cl of classInfo; track classInfo){
+                    <tr>
+                      <th scope="row">{{cl.LRN}}</th>
+                      <td class="text-body-secondary">{{cl.fname}} {{cl.lname}}</td>
+                      <td class="text-body-secondary">{{cl.gender}}</td>
+                      <td class="text-body-secondary">{{cl.contact_no}}</td>
+                    </tr>
+                  } -->
+                  <!-- Example Rows for Students --> 
+                  <tr *ngFor="let student of students; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td class="text-start">{{ student.name }}</td>
+                    <td *ngFor="let date of student.attendance; let d = index"
+                        (click)="handleClick(i, d, date.status )"
+                        [ngStyle]="{'background-color': colors[date.status]}"
+                        id="{{student.id}}-{{date}}">
+                        {{d + today.getDate() - (today.getDay() - 1)}}
+                    </td>
+                  </tr>  
+                </tbody>
+              </table>
+              
+        </div>
+    </div>
+</div>
+
